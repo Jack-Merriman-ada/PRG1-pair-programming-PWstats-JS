@@ -28,32 +28,24 @@ function processData() {
       newObject[`${passwordLength} chars long`] = 1
     }
   }
-
-  console.log(newObject)
+  return newObject;
 }
 
+const passwordLengthObject = processData()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function writeObjectToFile (Object) {
+  fs.writeFileSync("./passwords_length_object.txt", JSON.stringify(Object).replaceAll(",", ",\n"))
+}
 
 
 
 // Main execution
 // deleteExistingOutputFile(); 
 processData();
+writeObjectToFile(passwordLengthObject)
+
+
+[1, 2, 3, 4, 5, 6]// 1d
+
+[[1, 2, 3],
+[4, 5, 6]] //2d
