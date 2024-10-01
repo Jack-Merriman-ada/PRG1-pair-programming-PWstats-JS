@@ -18,14 +18,14 @@ function processData() {
 
   const newObject = {}
 
-  for (const line of lines) { // loop through each line in lines
-    let elements = line.split(delimiter); //split line into an array called elements
-    const passwordLength = elements[1].length // access the password in line and return its length
+  for (const line of lines) { 
+    let elements = line.split(delimiter); 
+    const passwordLength = elements[1].length 
 
-    if (newObject[`${passwordLength} chars long`]) { // checks new object for key
-      newObject[`${passwordLength} chars long`] += 1 // if key exists, increases value by one
+    if (newObject[`${passwordLength} chars long`]) {
+      newObject[`${passwordLength} chars long`] += 1
     } else {
-      newObject[`${passwordLength} chars long`] = 1 // else creates key and value 
+      newObject[`${passwordLength} chars long`] = 1
     }
   }
 
